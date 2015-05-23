@@ -15,8 +15,8 @@ class CategoriesController extends Controller {
 	 */
 	public function index()
 	{	
-		$category = Category::latest()->paging(15);
-		return view('categories.index', compact('cateo'));
+		$category = Category::latest()->paginate(15);
+		return view('categories.index', compact('category'));
 	}
 
 	/**
@@ -26,7 +26,8 @@ class CategoriesController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		$category = new Category;
+		return view('categories.create', compact('category'));
 	}
 
 	/**
@@ -34,9 +35,12 @@ class CategoriesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$input = $request->all();
+		$category = Category::create($input);
+		
+		return redirect('categories')->with('message', 'Category created');
 	}
 
 	/**

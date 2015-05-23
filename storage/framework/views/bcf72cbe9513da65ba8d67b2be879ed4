@@ -5,6 +5,13 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Categories</div>
 				<div class="panel-body">
+					<?php if(Session::has('message')): ?>
+					<div class="alert alert-success">
+						<p><?php echo e(Session::get('message')); ?></p>
+					</div>
+					<?php endif; ?>	
+					<a href="<?php echo e(url('categories/create')); ?>" class="btn btn-primary">Buat Category<a>
+					<hr>
 					<table class="table">
 						<tr>
 							<th>ID</th>
