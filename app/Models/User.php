@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace App\models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -31,4 +31,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+	
+	/**
+	* relationship user between product
+	* @return App\Models\Product;
+	**/
+	public function products(){
+		$this->hasMany('App\Models\Product');
+	}
 }
