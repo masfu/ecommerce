@@ -1,0 +1,45 @@
+PHPUnit 4.5.0 by Sebastian Bergmann and contributors.
+
+Configuration read from /var/www/html/keluhan/phpunit.xml
+
+.E
+
+Time: 391 ms, Memory: 5.25Mb
+
+There was 1 error:
+
+1) KeluhanControllerTest::testStore
+PHPUnit_Framework_Exception: PHP Fatal error:  Uncaught exception 'Illuminate\Container\BindingResolutionException' with message 'Target [Illuminate\Contracts\Debug\ExceptionHandler] is not instantiable.' in /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Container/Container.php:785
+Stack trace:
+#0 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Container/Container.php(656): Illuminate\Container\Container->build('Illuminate\Cont...', Array)
+#1 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(613): Illuminate\Container\Container->make('Illuminate\Cont...', Array)
+#2 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(151): Illuminate\Foundation\Application->make('Illuminate\Cont...')
+#3 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(73): Illuminate\Foundation\Bootstrap\HandleExceptions->getExceptionHandler()
+#4 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->h in /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 785
+Fatal error: Uncaught exception 'Illuminate\Container\BindingResolutionException' with message 'Target [Illuminate\Contracts\Debug\ExceptionHandler] is not instantiable.' in /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Container/Container.php:785
+Stack trace:
+#0 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Container/Container.php(656): Illuminate\Container\Container->build('Illuminate\Cont...', Array)
+#1 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(613): Illuminate\Container\Container->make('Illuminate\Cont...', Array)
+#2 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(151): Illuminate\Foundation\Application->make('Illuminate\Cont...')
+#3 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(73): Illuminate\Foundation\Bootstrap\HandleExceptions->getExceptionHandler()
+#4 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->h in /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 785
+PHP Fatal error:  Uncaught exception 'Illuminate\Container\BindingResolutionException' with message 'Target [Illuminate\Contracts\Debug\ExceptionHandler] is not instantiable.' in /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Container/Container.php:785
+Stack trace:
+#0 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Container/Container.php(656): Illuminate\Container\Container->build('Illuminate\Cont...', Array)
+#1 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(613): Illuminate\Container\Container->make('Illuminate\Cont...', Array)
+#2 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(151): Illuminate\Foundation\Application->make('Illuminate\Cont...')
+#3 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(73): Illuminate\Foundation\Bootstrap\HandleExceptions->getExceptionHandler()
+#4 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Foundation in /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 785
+Fatal error: Uncaught exception 'Illuminate\Container\BindingResolutionException' with message 'Target [Illuminate\Contracts\Debug\ExceptionHandler] is not instantiable.' in /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Container/Container.php:785
+Stack trace:
+#0 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Container/Container.php(656): Illuminate\Container\Container->build('Illuminate\Cont...', Array)
+#1 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(613): Illuminate\Container\Container->make('Illuminate\Cont...', Array)
+#2 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(151): Illuminate\Foundation\Application->make('Illuminate\Cont...')
+#3 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(73): Illuminate\Foundation\Bootstrap\HandleExceptions->getExceptionHandler()
+#4 /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Foundation in /var/www/html/keluhan/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 785
+
+phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php:186
+phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php:138
+
+FAILURES!
+Tests: 2, Assertions: 1, Errors: 1.
