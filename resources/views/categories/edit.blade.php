@@ -23,7 +23,7 @@
 
                     <p class="pull-left">
                         <button class="btn btn-primary" type="submit">Edit Kategori</button>
-                        <a href="{{ url('') }}" class="btn btn-danger" type="button">Batal</a>
+                        <a href="{{ url('categories') }}" class="btn btn-danger" type="button">Batal</a>
                     </p>
                     {!! Form::close() !!}
                 </div>
