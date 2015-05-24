@@ -1,0 +1,43 @@
+<?php $__env->startSection('content'); ?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Categories</div>
+                <div class="panel-body">
+                    <?php if(Session::has('message')): ?>
+                    <div class="alert alert-success">
+                        <p><?php echo e(Session::get('message')); ?></p>
+                    </div>
+                    <?php endif; ?>	
+                    <a href="<?php echo e(url('users/create')); ?>" class="btn btn-primary">Buat Users</a>
+                    <hr>
+                    <table class="table">
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th>
+                            <th>EMAIL</th>
+                        </tr>
+                        <?php foreach($users as $row): ?>
+                        <tr>
+                            <td><?php echo e($row->id); ?></td>
+                            <td><?php echo e($row->name); ?></td>
+                            <td><?php echo e($row->email); ?></td>
+                            <td>
+                                <a href="<?php echo e(route('users.show', $row->id)); ?>"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                <a href="<?php echo e(route('users.edit', $row->id)); ?>"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="<?php echo e(route('users.destroy', $row->id)); ?>" data-method="delete" data-confirm="Are you sure delete this users?" rel="nofollow" data-remote><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                    <?php echo $users->render(); ?>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

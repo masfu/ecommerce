@@ -1,30 +1,31 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model {
 
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'categories';
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'categories';
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name'];
 
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = ['name'];
+    /**
+     * relationship categories between product
+     * @return App\Models\Product;
+     * */
+    public function products() {
+        return $this->hasMany('App\Models\Product');
+    }
 
-
-	/**
-	* relationship categories between product
-	* @return App\Models\Product;
-	**/
-	public function products(){
-		$this->hasMany('App\Models\Product');
-	}
 }

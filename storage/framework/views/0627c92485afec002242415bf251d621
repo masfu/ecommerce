@@ -1,24 +1,35 @@
 <?php $__env->startSection('content'); ?>
 <div class="container">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-heading">Categories</div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Categories</div>
+                <div class="panel-body">
+                    <?php if(count($errors) > 0): ?>
+                    <div class="alert alert-danger">
+                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                        <ul>
+                            <?php foreach($errors->all() as $key => $error): ?>
+                            <li><?php echo e($error); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    <?php endif; ?>
+                    <?php echo Form::model($category, ['route' => ['categories.store']]); ?>
 
-				<div class="panel-body">
-					<?php echo Form::model($category, ['route' => ['categories.store']]); ?>
 
                     <?php echo $__env->make('categories._form', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-						<p class="pull-left">
-							<button class="btn btn-primary" type="button">Buat Kategori</button>
-							<button class="btn btn-alt" data-dismiss="modal" type="button">Close</button>
-						</p>
-					<?php echo Form::close(); ?>
 
-				</div>
-			</div>
-		</div>
-	</div>
+                    <p class="pull-left">
+                        <button class="btn btn-primary" type="submit">Buat Kategori</button>
+                        <a href="<?php echo e(url('')); ?>" class="btn btn-danger" type="button">Batal</a>
+                    </p>
+                    <?php echo Form::close(); ?>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <?php $__env->stopSection(); ?>
 

@@ -1,35 +1,41 @@
 <?php $__env->startSection('content'); ?>
 <div class="container">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-heading">Categories</div>
-				<div class="panel-body">
-					<?php if(Session::has('message')): ?>
-					<div class="alert alert-success">
-						<p><?php echo e(Session::get('message')); ?></p>
-					</div>
-					<?php endif; ?>	
-					<a href="<?php echo e(url('categories/create')); ?>" class="btn btn-primary">Buat Category<a>
-					<hr>
-					<table class="table">
-						<tr>
-							<th>ID</th>
-							<th>NAME</th>
-						</tr>
-						<?php foreach($category as $row): ?>
-							<tr>
-								<th><?php echo e($row->id); ?></th>
-								<th><?php echo e($row->name); ?></th>
-							</tr>
-						<?php endforeach; ?>
-					</table>
-					<?php echo $category->render(); ?>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Categories</div>
+                <div class="panel-body">
+                    <?php if(Session::has('message')): ?>
+                    <div class="alert alert-success">
+                        <p><?php echo e(Session::get('message')); ?></p>
+                    </div>
+                    <?php endif; ?>	
+                    <a href="<?php echo e(url('categories/create')); ?>" class="btn btn-primary">Buat Category</a>
+                    <hr>
+                    <table class="table">
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th>
+                            <th></th>
+                        </tr>
+                        <?php foreach($category as $row): ?>
+                        <tr>
+                            <td><?php echo e($row->id); ?></td>
+                            <td><?php echo e($row->name); ?></td>
+                            <td>
+                                <a href="<?php echo e(route('categories.show', $row->id)); ?>"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                <a href="<?php echo e(route('categories.edit', $row->id)); ?>"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="<?php echo e(route('categories.destroy', $row->id)); ?>" data-method="delete" data-confirm="Are you sure delete this categori?" rel="nofollow" data-remote><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                    <?php echo $category->render(); ?>
 
-				</div>
-			</div>
-		</div>
-	</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <?php $__env->stopSection(); ?>
 

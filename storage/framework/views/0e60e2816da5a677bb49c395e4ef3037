@@ -1,0 +1,51 @@
+<?php $__env->startSection('content'); ?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Detail</div>
+
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <td>ID</td>
+                            <td><?php echo e($product->id); ?></td>
+                        </tr>
+                        <tr>
+                            <td>TITLE</td>
+                            <td><?php echo e($product->name); ?></td>
+                        </tr>
+                        <tr>
+                            <td>DESCRIPTION</td>
+                            <td><?php echo e($product->description); ?></td>
+                        </tr>
+                        <tr>
+                            <td>PRICE</td>
+                            <td><?php echo e($product->price); ?></td>
+                        </tr>
+                        <tr>
+                            <td>QUANTITY</td>
+                            <td><?php echo e($product->quantity); ?></td>
+                        </tr>
+                        <tr>
+                            <td>CATEGORY</td>
+                            <td><?php echo e($product->category->name); ?></td>
+                        </tr>
+                        <tr>
+                            <td>USER</td>
+                            <td><?php echo e($product->user->name); ?></td>
+                        </tr>
+                        <tr>
+                            <td>IMAGE</td>
+                            <td><img src="<?php echo e(url( $product->imageUrl())); ?>"></td>
+                        </tr>
+                    </table>
+                    <a href="<?php echo e(url('users')); ?>">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
